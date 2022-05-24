@@ -126,7 +126,7 @@ img {
     grid-area: footer;
     background-color: #000;
     flex-direction: column;
-    position: fixed;
+
     bottom: 0;
 }
 
