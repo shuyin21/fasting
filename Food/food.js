@@ -26,7 +26,7 @@ addBtn.addEventListener('click', () => {
 // Creating the list Item
 const crtListItem = (foodInput, foodQt, size) => {
     if (foodInput.length > 12) {
-        foodInput = `${foodInput.substring(0, 11).toUpperCase()}..`;
+        foodInput = `${foodInput.substring(0, 11)}..`;
     }
     let li = document.createElement('li');
     let h4 = document.createElement('h4');
@@ -36,7 +36,7 @@ const crtListItem = (foodInput, foodQt, size) => {
     li.appendChild(h4);
     li.appendChild(p);
     li.appendChild(btn);
-    h4.innerText = foodInput;
+    h4.innerText = foodInput.toUpperCase();
     p.innerHTML = `${foodQt} ${size}`;
     btn.innerText = 'X';
     btn.addEventListener('click', () => {
