@@ -57,14 +57,11 @@ li {
 }
 
 #footer {
-    /* height: 10vh;
-    width: 100%; */
-    /* margin-top: 5px; */
+
     grid-area: footer;
     background-color: #000;
     flex-direction: column;
-    /* position: absolute;
-    bottom: 0; */
+    padding-top: 5px;
 }
 
 #footer h5 {
@@ -145,7 +142,7 @@ li {
     display: grid;
     gap: 5px;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    grid-template-rows: 0.2fr 1fr 0.2fr 0.4fr 1fr 0.4fr 0.3fr;
+    grid-template-rows: 0.2fr 1fr 0.2fr 0.4fr 1fr 0.4fr 0.4fr;
     grid-template-areas:
         'nav nav nav'
         'header header header'
