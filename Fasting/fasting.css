@@ -176,3 +176,9 @@ div {
 
     }
 }
+
+@media screen and (max-height:700px) {
+    body {
+        height: 800px;
+    }
+}
