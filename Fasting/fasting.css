@@ -70,3 +70,109 @@ li {
     margin: 5px 0 0;
     color: #fff;
 }
+
+#header {
+    grid-area: header;
+    background-image: url('../images/undraw-images/time.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
+
+}
+
+#info {
+    grid-area: info;
+}
+
+#selection {
+    grid-area: selection;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+
+.circle {
+    border: 3px solid pink;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#timer {
+    grid-area: timer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clock {
+    width: 200px;
+    height: 200px;
+    border: 3px solid red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#digital {
+    width: 80%;
+    height: 20%;
+    border: 1px solid #000;
+}
+
+#button-div {
+    grid-area: button;
+
+
+}
+
+#button {
+    width: 100px;
+    height: 50px;
+    border: 2px solid pink;
+    border-radius: 7px;
+}
+
+#main {
+    width: 95%;
+    height: 85%;
+    padding: 0 2.5%;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr 0.2fr 0.4fr 1fr 0.4fr;
+    grid-template-areas:
+
+        'header header header'
+        'info info info'
+        'selection selection selection'
+        '. timer .'
+        '. button .';
+
+
+}
+
+div {
+    text-align: center;
+}
+
+@media screen and (min-width:900px) {
+    #main {
+
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: 1fr 0.2fr 0.4fr 1fr 0.4fr;
+        grid-template-areas:
+
+            '. header header header .'
+            '. info info info .'
+            '. selection selection selection .'
+            '. . timer . .'
+            '. . button . .';
+
+
+    }
+}
