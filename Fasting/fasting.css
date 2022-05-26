@@ -81,6 +81,7 @@ li {
 
 #info {
     grid-area: info;
+    padding: 0 5%;
 }
 
 #selection {
@@ -118,6 +119,7 @@ li {
     border: 3px solid red;
     border-radius: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -136,15 +138,32 @@ li {
 
 }
 
-#button {
+button {
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.button {
     width: 100px;
     height: 50px;
     border: 2px solid pink;
     border-radius: 7px;
     cursor: pointer;
-    background-color: green;
-    color: #fff;
 
+    color: #fff;
+}
+
+.start {
+
+    background-color: green;
+}
+
+.stop {
+    background-color: red;
+}
+
+.non-disp {
+    display: none;
 }
 
 #button:hover {
