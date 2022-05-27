@@ -34,16 +34,25 @@
             <h3>Choose your fasting duration</h3>
         </div>
         <div id="selection">
-            <button class="circle" value="16" id="f16">16h</button>
-            <button class="circle" value="24" id="f24">24h</button>
-            <button class="circle" value="36" id="f36">36h</button>
-            <button class="circle" value="48" id="f48">48h</button>
-            <button class="circle" value="72" id="f72">72h</button>
+            <button class="circle pulsing" value="16" id="f16">
+                16h
+            </button>
+            <button class="circle pulsing" value="24" id="f24">24h</button>
+            <button class="circle pulsing" value="36" id="f36">36h</button>
+            <button class="circle pulsing" value="48" id="f48">48h</button>
+            <button class="circle pulsing" value="72" id="f72">72h</button>
+            <!-- <div class="icon">
+                <img src="../images/undraw-images/gym.svg" alt="">
+            </div> -->
         </div>
         <div id="timer">
-            <div id="clock">
+            <div id="clock" class="clock-pulse">
+
                 <div id="digital" class="centering">00:00:00</div>
+
+
                 <button id="clr-btn">clear</button>
+                <div class="infinite-pulse" id="clock-pulse"></div>
             </div>
         </div>
         <div id="button-div" class="centering">

@@ -9,6 +9,7 @@ const button = document.getElementById('button');
 const stop = document.getElementById('stop');
 const clrBtn = document.getElementById('clr-btn');
 const info = document.querySelector('#info h3');
+const circle = document.getElementsByClassName('circle');
 
 
 let myInterval;
@@ -118,13 +119,16 @@ function clearClock() {
 function unlockBtn() {
     fButtonWrapper.forEach((x) => {
         x.disabled = false;
+        x.classList.add('pulsing');
     })
 }
 // lock the fasting duration buttons
 function lockBtn() {
     fButtonWrapper.forEach((x) => {
         x.disabled = true;
-    })
+        x.classList.remove('pulsing');
+    });
+
 }
 // Checking the fasting duration
 function fastTime(fTime) {
