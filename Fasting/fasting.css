@@ -144,6 +144,10 @@ li {
 
 }
 
+#clr-btn {
+    z-index: 99;
+}
+
 #button-div {
     grid-area: button;
 
@@ -278,7 +282,7 @@ div {
     }
 
     100% {
-        transform: scale(1.2);
+        transform: scale(1.5);
         opacity: 0;
     }
 }
