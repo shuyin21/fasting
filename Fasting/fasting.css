@@ -208,7 +208,8 @@ button {
         'selection selection selection'
         '. timer .'
         '. button .'
-        'footer footer footer';
+        '. . . '
+        /* 'footer footer footer'; */
 
 
 }
@@ -229,8 +230,8 @@ div {
             '. . selection . .'
             '. . timer . .'
             '. . button . .'
-            'footer footer footer footer footer';
-
+            /* 'footer footer footer footer footer'; */
+            '. . . . . '
 
     }
 }

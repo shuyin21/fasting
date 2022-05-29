@@ -1,4 +1,4 @@
-const footerP = document.querySelector('#footer p');
+// const footerP = document.querySelector('#footer p');
 const f16 = document.getElementById('f16');
 const f24 = document.getElementById('f24');
 const f36 = document.getElementById('f36');
@@ -25,12 +25,12 @@ let minutesLeft;
 let secondsLeft;
 
 // checking the year for the footer
-let date = () => {
-    let d = new Date();
-    let year = d.getFullYear();
-    footerP.innerHTML = `Life Style Change App ${year}`
-}
-date();
+// let date = () => {
+//     let d = new Date();
+//     let year = d.getFullYear();
+//     footerP.innerHTML = `Life Style Change App ${year}`
+// }
+// date();
 
 // fasting button click handler
 fButtonWrapper.forEach((x) => {
