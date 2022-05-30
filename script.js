@@ -2,6 +2,13 @@ const footerP = document.querySelector('#footer p');
 const workoutBtn = document.getElementById('workout');
 const foodBtn = document.getElementById('food');
 const fastingBtn = document.getElementById('fasting');
+const modal = document.getElementsByClassName('modal');
+const registerModal = document.getElementsByClassName('register-modal');
+const loginModal = document.getElementsByClassName('login-modal');
+const inputs = document.querySelectorAll('input');
+const loginBtn = document.getElementById('login-btn');
+const registerBtn = document.getElementById('register-btn');
+const errorPar = document.getElementById('error-par');
 
 const buttonsHolder = [workoutBtn, foodBtn, fastingBtn];
 
@@ -26,3 +33,23 @@ buttonsHolder.forEach((btn) => {
     })
 })
 
+
+
+loginBtn.addEventListener('click', () => {
+    modal[0].classList.remove('non-display');
+    loginModal[0].classList.remove('non-display');
+});
+registerBtn.addEventListener('click', () => {
+    modal[0].classList.remove('non-display');
+    registerModal[0].classList.remove('non-display');
+});
+
+function closeModal() {
+    modal[0].classList.add('non-display');
+    loginModal[0].classList.add('non-display');
+    registerModal[0].classList.add('non-display');
+
+    inputs.forEach(x => x.value = '');
+
+    errorPar.innerText = '';
+}

@@ -13,20 +13,53 @@
 </head>
 
 <body>
+
+
+
+
+
+
     <main id="main">
         <div id="nav" class="flexing">
             <div id="logo"><a href="/index.html">LSC</a></div>
             <div>
                 <ul class="flexing">
                     <li>
-                        <div><a href="#">Register</a></div>
+                        <div><a href="#" id="register-btn">Register</a></div>
                     </li>
                     <li>
-                        <div><a href="#">Login</a></div>
+                        <div><a href="#" id="login-btn">Login</a></div>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <div class="modal non-display">
+            <form action="submit" id="signup-form" class="register-modal non-display">
+                <div class="close"><span class="close-btn" onclick="closeModal()">X</span></div>
+                <h3>Register</h3>
+                <input type="email" id="signup-email" placeholder="Email address" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <input type="password" id="signup-pConfirm" placeholder="Confirm Password" required>
+                <button type="submit" class="submit-btn">Register</button>
+                <p id="error-par"></p>
+
+            </form>
+            <form action="submit" class="login-modal non-display">
+                <div class="close"><span class="close-btn" onclick="closeModal()">X</span></div>
+                <h3>Login</h3>
+                <input type="email" placeholder="Email address" required>
+                <input type="password" placeholder="Password" required>
+
+                <button type="submit" class="submit-btn">Login</button>
+
+            </form>
+
+
+        </div>
+
+
+
         <div id="header" class="centering">
 
             <img src="/images/homepage-images/1200.jpg" alt="training image">
@@ -59,9 +92,12 @@
         </div>
 
     </main>
+    <script type="module" src="firebase.js">
 
-
+    </script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
