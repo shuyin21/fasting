@@ -61,9 +61,12 @@ signupForm.addEventListener('submit', (e) => {
                 if (errorCode === 'auth/email-already-in-use') {
                     errorPar.innerText = 'Email address already in use!!  Please Login!';
                     errorPar.style.color = 'red';
+                    signupForm['signup-password'].value = '';
+                    signupForm['signup-pConfirm'].value = '';
                 } else {
                     errorPar.innerText = 'Something went wrong! Try again later!!';
-
+                    signupForm['signup-password'].value = '';
+                    signupForm['signup-pConfirm'].value = '';
                 }
                 // ..
             });
