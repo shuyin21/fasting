@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,16 +26,24 @@ const auth = getAuth(app);
 
 // Detect auth state 
 onAuthStateChanged(auth, user => {
+    const loginDiv = document.getElementById('login-div');
+    const logoutDiv = document.getElementById('logout-div');
     if (user != null) {
         console.log('logged in!');
+
+        loginDiv.classList.add('non-display');
+        logoutDiv.classList.remove('non-display');
     } else {
         console.log('No user');
+        loginDiv.classList.remove('non-display');
+        logoutDiv.classList.add('non-display');
     }
 });
 
 
 const signupForm = document.querySelector('#signup-form');
 const errorPar = document.getElementById('error-par');
+const logoutBtn = document.getElementById('logout-btn');
 
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -43,6 +51,8 @@ signupForm.addEventListener('submit', (e) => {
     const email = signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value;
     const pConfirm = signupForm['signup-pConfirm'].value;
+
+
     // signup the user 
     if (password === pConfirm) {
         createUserWithEmailAndPassword(auth, email, password)
@@ -77,4 +87,36 @@ signupForm.addEventListener('submit', (e) => {
     }
 
 
+});
+// logout
+logoutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+        console.log('user signed out');
+    });
+});
+
+// signin
+
+const loginForm = document.getElementById('signin-form');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // get user info
+    const email = loginForm['login-email'].value;
+    const password = loginForm['login-password'].value;
+
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user);
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            loginForm.reset();
+        });
 })

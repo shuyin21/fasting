@@ -28,7 +28,8 @@
                         <div><a href="#" id="register-btn">Register</a></div>
                     </li>
                     <li>
-                        <div><a href="#" id="login-btn">Login</a></div>
+                        <div id="login-div"><a href="#" id="login-btn">Login</a></div>
+                        <div id="logout-div" class="non-display"><a href="#" id="logout-btn">Logout</a></div>
                     </li>
                 </ul>
             </div>
@@ -45,11 +46,11 @@
                 <p id="error-par"></p>
 
             </form>
-            <form action="submit" class="login-modal non-display">
+            <form action="submit" id="signin-form" class="login-modal non-display">
                 <div class="close"><span class="close-btn" onclick="closeModal()">X</span></div>
                 <h3>Login</h3>
-                <input type="email" placeholder="Email address" required>
-                <input type="password" placeholder="Password" required>
+                <input type="email" id="login-email" placeholder="Email address" required>
+                <input type="password" id="login-password" placeholder="Password" required>
 
                 <button type="submit" class="submit-btn">Login</button>
 
