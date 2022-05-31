@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,21 +24,7 @@ const db = getFirestore(app);
 
 const auth = getAuth(app);
 
-// Detect auth state 
-onAuthStateChanged(auth, user => {
-    const loginDiv = document.getElementById('login-div');
-    const logoutDiv = document.getElementById('logout-div');
-    if (user != null) {
-        console.log('logged in!');
 
-        loginDiv.classList.add('non-display');
-        logoutDiv.classList.remove('non-display');
-    } else {
-        console.log('No user');
-        loginDiv.classList.remove('non-display');
-        logoutDiv.classList.add('non-display');
-    }
-});
 
 
 const signupForm = document.querySelector('#signup-form');
@@ -91,14 +77,13 @@ signupForm.addEventListener('submit', (e) => {
 // logout
 logoutBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    auth.signOut().then(() => {
-        console.log('user signed out');
-    });
+    auth.signOut();
 });
 
 // signin
 
 const loginForm = document.getElementById('signin-form');
+const loginError = document.getElementById('login-error');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     // get user info
@@ -111,12 +96,57 @@ loginForm.addEventListener('submit', (e) => {
             // Signed in 
             const user = userCredential.user;
             console.log(user);
+            loginError.innerText = '';
+            closeModal();
             // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorMessage);
+            console.log(errorCode);
+
+
+            if (errorCode === 'auth/wrong-password') {
+                loginError.innerText = 'Sorry! Wrong password!';
+            }
+            else if (errorCode === 'auth/user-not-found') {
+                loginError.innerText = 'User not found!!'
+            } else {
+                loginError.innerText = 'Something went wrong!!!';
+            }
             loginForm.reset();
+
         });
-})
+});
+
+// get data
+
+// db.collection('user').get().then(snapshot => {
+//     console.log(snapshot.docs);
+// });
+const querySnapshot = await getDocs(collection(db, "user"));
+function getDb() {
+
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().currentWeight}kg`);
+        showUserData(doc.data())
+    });
+}
+
+
+// Detect auth state 
+onAuthStateChanged(auth, user => {
+    const loginDiv = document.getElementById('login-div');
+    const logoutDiv = document.getElementById('logout-div');
+    if (user != null) {
+        console.log('logged in!');
+        getDb();
+        loginDiv.classList.add('non-display');
+        logoutDiv.classList.remove('non-display');
+    } else {
+        console.log('No user');
+        loginDiv.classList.remove('non-display');
+        logoutDiv.classList.add('non-display');
+
+    }
+});

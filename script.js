@@ -53,3 +53,8 @@ function closeModal() {
 
     errorPar.innerText = '';
 }
+
+
+function showUserData(data) {
+    console.log(data);
+}

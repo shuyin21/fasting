@@ -264,7 +264,8 @@ form h3 {
     display: none;
 }
 
-#error-par {
+#error-par,
+#login-error {
     padding: 0 10px;
     text-align: center;
     color: red;
