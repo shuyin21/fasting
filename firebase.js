@@ -126,27 +126,30 @@ loginForm.addEventListener('submit', (e) => {
 // });
 const querySnapshot = await getDocs(collection(db, "user"));
 function getDb() {
-
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().currentWeight}kg`);
-        showUserData(doc.data())
-    });
+    // userRef = db.collection('user');
+    // querySnapshot.forEach((doc) => {
+    //     console.log(`${doc.id} => ${doc.data().currentWeight}kg`);
+    //     showUserData(doc.data())
+    // });
 }
 
-
+let loggedIn = false;
 // Detect auth state 
 onAuthStateChanged(auth, user => {
     const loginDiv = document.getElementById('login-div');
     const logoutDiv = document.getElementById('logout-div');
     if (user != null) {
-        console.log('logged in!');
+        console.log('logged in!', user.uid);
         getDb();
         loginDiv.classList.add('non-display');
         logoutDiv.classList.remove('non-display');
+        loggedIn = true;
     } else {
         console.log('No user');
         loginDiv.classList.remove('non-display');
         logoutDiv.classList.add('non-display');
+        loggedIn = false;
 
     }
 });
+export { loggedIn };

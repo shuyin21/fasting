@@ -35,26 +35,26 @@ buttonsHolder.forEach((btn) => {
 
 
 
-loginBtn.addEventListener('click', () => {
-    modal[0].classList.remove('non-display');
-    loginModal[0].classList.remove('non-display');
-});
-registerBtn.addEventListener('click', () => {
-    modal[0].classList.remove('non-display');
-    registerModal[0].classList.remove('non-display');
-});
+// loginBtn.addEventListener('click', () => {
+//     modal[0].classList.remove('non-display');
+//     loginModal[0].classList.remove('non-display');
+// });
+// registerBtn.addEventListener('click', () => {
+//     modal[0].classList.remove('non-display');
+//     registerModal[0].classList.remove('non-display');
+// });
 
-function closeModal() {
-    modal[0].classList.add('non-display');
-    loginModal[0].classList.add('non-display');
-    registerModal[0].classList.add('non-display');
+// function closeModal() {
+//     modal[0].classList.add('non-display');
+//     loginModal[0].classList.add('non-display');
+//     registerModal[0].classList.add('non-display');
 
-    inputs.forEach(x => x.value = '');
+//     inputs.forEach(x => x.value = '');
 
-    errorPar.innerText = '';
-}
+//     errorPar.innerText = '';
+// }
 
 
-function showUserData(data) {
-    console.log(data);
-}
+// function showUserData(data) {
+//     console.log(data);
+// }
