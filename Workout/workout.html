@@ -5,18 +5,141 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Koulen&family=Montserrat:wght@400&family=Nanum+Myeongjo&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="workout.css">
     <title>Workout page</title>
 </head>
 
 <body>
-    <h1>Workout page</h1>
-    <div class="wrap">
+
+    <div id="main">
+        <div id="nav" class="centering">
+            <div id="logo"><a href="/index.html">LSC</a></div>
+            <div>
+                <ul class="flexing">
+                    <li>
+                        <div><a href="../Workout/workout.html">Workout</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../Food/food.html">Shopping</a></div>
+                    </li>
+                    <li>
+                        <div><a href="../Fasting/fasting.html">Fasting</a></div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div id="header"></div>
+        <div id="selection">
+            <h3>Create Your Training plan</h3>
+            <div id="week-select" class="week-select">
+                <p>Please select how many weeks long you want your training without repetation</p>
+                <form action="submit" id="week-selector">
+                    <select name="selection" onchange="weekselectFunc(value)" id="week-opt">
+                        <option value="select" selected="true" disabled="disabled">select</option>
+                        <option value="1">1 week</option>
+                        <option value="2">2 weeks</option>
+                        <option value="3">3 weeks</option>
+                        <option value="4">4 weeks</option>
+                    </select>
+
+
+                </form>
+
+            </div>
+            <div class="w-buttons non-display">
+                <button class="non-display" id="week-1">week 1</button>
+                <button class="non-display" id="week-2">week 2</button>
+                <button class="non-display" id="week-3">week 3</button>
+                <button class="non-display" id="week-4">week 4</button>
+            </div>
+            <select name="day" id="days">
+                <option value="Day" selected="true" disabled="disabled">Day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+            <form id="tr-add" action="submit" class="tr-add">
+                <select id="buttons-wrapper">
+                    <option value="Body Part" selected="true" disabled="disabled">Body Part</option>
+                    <option value="chest">Chest</option>
+                    <option value="back">Back</option>
+                    <option value="shoulder">Shoulder</option>
+                    <option value="leg">Leg</option>
+                    <option value="biceps">Biceps</option>
+                    <option value="triceps">Triceps</option>
+                </select>
+
+
+            </form>
+
+            <div id="select-wrapper">
+                <select name="" id="tr-select">
+                    <option value="">Bench Press</option>
+                </select>
+                <select name="" id="sets">
+                    <option value="Sets" selected="true" disabled="disabled">Sets</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <input type="number" placeholder="Reps">
+                <button type="submit">Add</button>
+            </div>
+            <div id="training-list1" class="list-div">
+                <div id="mon-w1">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Monday</h3>
+                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
+                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
+                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
+                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
+
+                    </ul>
+                </div>
+                <div id="tue-w1"></div>
+                <div id="wed-w1"></div>
+                <div id="thu-w1"></div>
+                <div id="fri-w1"></div>
+                <div id="sat-w1"></div>
+                <div id="sun-w1"></div>
+
+            </div>
+            <div id="training-list2" class="list-div non-display">
+
+            </div>
+            <div id="training-list3" class="list-div non-display">
+
+            </div>
+            <div id="training-list4" class="list-div non-display">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="wrap">
         <form action="submit" id="workout-form">
             <input type="text" id="workout-input">
             <button type="submit" id="workout-btn">submit</button>
         </form>
 
-    </div>
+    </div> -->
 
 
     <script src="workout.js"></script>
