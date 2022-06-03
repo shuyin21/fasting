@@ -14,8 +14,8 @@
 
 <body>
 
-    <div id="main">
-        <div id="nav" class="centering">
+    <div id="main" class="main">
+        <div id="nav" class="centering no">
             <div id="logo"><a href="/index.html">LSC</a></div>
             <div>
                 <ul class="flexing">
@@ -33,10 +33,10 @@
             </div>
 
         </div>
-        <div id="header"></div>
+        <div id="header" class="no"></div>
         <div id="selection">
-            <h3>Create Your Training plan</h3>
-            <div id="week-select" class="week-select">
+            <h3 class="no">Create Your Training plan</h3>
+            <div id="week-select" class="week-select no">
                 <p>Please select how many weeks long you want your training without repetation</p>
                 <form action="submit" id="week-selector">
                     <select name="selection" onchange="weekselectFunc(value)" id="week-opt">
@@ -51,41 +51,42 @@
                 </form>
 
             </div>
-            <div class="w-buttons non-display">
+            <div class="w-buttons non-display no">
                 <button class="non-display" id="week-1">week 1</button>
                 <button class="non-display" id="week-2">week 2</button>
                 <button class="non-display" id="week-3">week 3</button>
                 <button class="non-display" id="week-4">week 4</button>
             </div>
-            <select name="day" id="days">
-                <option value="Day" selected="true" disabled="disabled">Day</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-                <option value="Sunday">Sunday</option>
+            <select name="day" id="days" class="non-display no" onchange="dayHandler(value)">
+                <option value="Day" selected="false" disabled="disabled">Day</option>
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wednesday</option>
+                <option value="thu">Thursday</option>
+                <option value="fri">Friday</option>
+                <option value="sat">Saturday</option>
+                <option value="sun">Sunday</option>
             </select>
-            <form id="tr-add" action="submit" class="tr-add">
-                <select id="buttons-wrapper">
-                    <option value="Body Part" selected="true" disabled="disabled">Body Part</option>
-                    <option value="chest">Chest</option>
-                    <option value="back">Back</option>
-                    <option value="shoulder">Shoulder</option>
-                    <option value="leg">Leg</option>
-                    <option value="biceps">Biceps</option>
-                    <option value="triceps">Triceps</option>
+
+            <select id="buttons-wrapper" class="no">
+                <option value="Body Part" selected="true" disabled="disabled">Body Part</option>
+                <option value="chest">Chest</option>
+                <option value="back">Back</option>
+                <option value="shoulder">Shoulder</option>
+                <option value="leg">Leg</option>
+                <option value="biceps">Biceps</option>
+                <option value="triceps">Triceps</option>
+            </select>
+
+
+
+
+            <div id="select-wrapper" class="no">
+                <select id="tr-select" class="no">
+                    <option value="Bench Press">Bench Press</option>
+                    <option value="45deg Press">45deg Press</option>
                 </select>
-
-
-            </form>
-
-            <div id="select-wrapper">
-                <select name="" id="tr-select">
-                    <option value="">Bench Press</option>
-                </select>
-                <select name="" id="sets">
+                <select name="" id="sets" class="no">
                     <option value="Sets" selected="true" disabled="disabled">Sets</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -96,13 +97,13 @@
                     <option value="7">7</option>
                     <option value="8">8</option>
                 </select>
-                <input type="number" placeholder="Reps">
-                <button type="submit">Add</button>
+                <input id="reps" type="number" placeholder="Reps" class="no">
+                <button onClick="addingHandler()" class="no">Add</button>
             </div>
-            <div id="training-list1" class="list-div">
-                <div id="mon-w1">
+            <div id="w1" class="list-div ">
+                <div class="mon w1 list non-display">
                     <ul class="list-ul">
-                        <h3 class="day-h3">Monday</h3>
+                        <h3 class="day-h3">Week 1 Monday</h3>
                         <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
                         <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
                         <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
@@ -110,24 +111,160 @@
 
                     </ul>
                 </div>
-                <div id="tue-w1"></div>
-                <div id="wed-w1"></div>
-                <div id="thu-w1"></div>
-                <div id="fri-w1"></div>
-                <div id="sat-w1"></div>
-                <div id="sun-w1"></div>
+                <div class="tue w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Tuesday</h3>
+                    </ul>
+                </div>
+                <div class="wed w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Wednesday</h3>
+                    </ul>
+                </div>
+                <div class="thu w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Thursday</h3>
+                    </ul>
+                </div>
+                <div class="fri w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Friday</h3>
+                    </ul>
+                </div>
+                <div class="sat w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Saturday</h3>
+                    </ul>
+                </div>
+                <div class="sun w1 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 1 Sunday</h3>
+                    </ul>
+                </div>
 
             </div>
-            <div id="training-list2" class="list-div non-display">
-
+            <div id="w2" class="list-div non-display">
+                <div class="mon w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Monday</h3>
+                    </ul>
+                </div>
+                <div class="tue w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Tuesday</h3>
+                    </ul>
+                </div>
+                <div class="wed w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Wednesday</h3>
+                    </ul>
+                </div>
+                <div class="thu w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Thursday</h3>
+                    </ul>
+                </div>
+                <div class="fri w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Friday</h3>
+                    </ul>
+                </div>
+                <div class="sat w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Saturday</h3>
+                    </ul>
+                </div>
+                <div class="sun w2 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 2 Sunday</h3>
+                    </ul>
+                </div>
             </div>
-            <div id="training-list3" class="list-div non-display">
-
+            <div id="w3" class="list-div non-display">
+                <div class="mon w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Monday</h3>
+                    </ul>
+                </div>
+                <div class="tue w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Tuesday</h3>
+                    </ul>
+                </div>
+                <div class="wed w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Wednesday</h3>
+                    </ul>
+                </div>
+                <div class="thu w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Thursday</h3>
+                    </ul>
+                </div>
+                <div class="fri w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Friday</h3>
+                    </ul>
+                </div>
+                <div class="sat w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Saturday</h3>
+                    </ul>
+                </div>
+                <div class="sun w3 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 3 Sunday</h3>
+                    </ul>
+                </div>
             </div>
-            <div id="training-list4" class="list-div non-display">
+            <div id="w4" class="list-div non-display">
+                <div class="mon w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Monday</h3>
+                    </ul>
+                </div>
+                <div class="tue w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Tuesday</h3>
+                    </ul>
+                </div>
+                <div class="wed w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Wednesday</h3>
+                    </ul>
+                </div>
+                <div class="thu w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Thursday</h3>
+                    </ul>
+                </div>
+                <div class="fri w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Friday</h3>
+                    </ul>
+                </div>
+                <div class="sat w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Saturday</h3>
+                    </ul>
+                </div>
+                <div class="sun w4 list non-display">
+                    <ul class="list-ul">
+                        <h3 class="day-h3">Week 4 Sunday</h3>
+                    </ul>
+                </div>
+            </div>
+            <div id="printer-btn" class="printer-btn no">
+                <button onClick="printBtn()" id="prbtn" class="no-show">Print</button>
+                <button onClick="printWorkout('w1')" class="w1-print non-display pr no-show">Print Week 1</button>
+                <button onClick="printWorkout('w2')" class="w2-print non-display pr no-show">Print Week 2</button>
+                <button onClick="printWorkout('w3')" class="w3-print non-display pr no-show">Print Week 3</button>
+                <button onClick="printWorkout('w4')" class="w4-print non-display pr no-show">Print Week 4</button>
 
             </div>
         </div>
+
+
     </div>
 
 

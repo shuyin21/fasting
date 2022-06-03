@@ -92,9 +92,9 @@ button {
     border: 1px solid white;
 }
 
-button:focus {
+/* button:focus {
     background-color: #75002B;
-}
+} */
 
 button:hover {
     background-color: #F74A89;
@@ -187,10 +187,38 @@ input {
 .list-ul li {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.list-ul li button {
+    background-color: #000;
+    text-align: center;
+    display: grid;
+    place-content: center;
+}
+
+span {
+    margin: 0 1%;
+    text-align: left;
+}
+
+.printer-btn {
+    position: absolute;
+    top: 93%;
+    /* bottom: 0; */
+    width: 100%;
+    height: 50px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+}
+
+.printer-btn button {
+    padding: 2px;
 }
 
 @media screen and (min-width:768px) {
@@ -220,11 +248,27 @@ input {
         align-items: center;
     }
 
-    .list-ul li {
-        justify-content: center;
+    .list-ul {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
     }
 
+
+
+    .printer-btn button {
+        padding: 5px;
+    }
+
+    /* 
     span {
         margin: 0 50px;
-    }
+    } */
+}
+
+.no-show {
+    display: none;
 }
