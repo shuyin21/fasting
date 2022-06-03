@@ -108,10 +108,10 @@ button:hover {
     gap: 5px;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.5fr 2.3fr;
+    grid-template-rows: 0.1fr 1.8fr;
     grid-template-areas:
         'nav'
-        'header'
+
         'selection';
 }
 
@@ -212,7 +212,7 @@ span {
     /* bottom: 0; */
     width: 100%;
     height: 50px;
-    border: 1px solid #000;
+
     display: flex;
     justify-content: center;
 }
@@ -227,6 +227,25 @@ span {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    button {
+        padding: 5px;
+    }
+
+    #tr-select,
+    #sets,
+    #days,
+    #buttons-wrapper,
+    #week-opt {
+        padding: 5px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    input {
+        height: 22px;
+        font-size: 12px;
     }
 
     #main {

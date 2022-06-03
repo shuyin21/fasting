@@ -70,6 +70,7 @@ function btnShower(x) {
 function weekBtnHandler() {
     const weekBtns = document.querySelectorAll('.w-buttons button');
     const days = document.getElementById('days');
+
     prbtn.classList.remove('no-show');
     weekBtns.forEach(x => {
         x.addEventListener('click', () => {
@@ -101,7 +102,8 @@ function weekBtnHandler() {
 
 }
 function daySelectorHandler(week) {
-
+    const first = document.querySelectorAll('.first');
+    first.forEach(x => x.classList.remove('non-display'));
     week.forEach(x => {
         console.log(x);
     })
@@ -140,7 +142,7 @@ function listDisplay(x) {
 function addingHandler() {
     const train = document.querySelector('#tr-select').value;
     const sets = document.querySelector('#sets').value;
-    const reps = document.querySelector('#reps').value;
+    let reps = document.querySelector('#reps').value;
     const allList = document.querySelectorAll('.list');
     const bodyPart = document.querySelector('#buttons-wrapper').value;
     console.log(train, sets, reps);
@@ -175,8 +177,9 @@ function addingHandler() {
             })
         }
 
-        ;
+
     })
+
 }
 
 function printWorkout(w) {
