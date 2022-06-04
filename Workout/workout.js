@@ -27,7 +27,7 @@ let elementContainer;
 
 function weekselectFunc(x) {
     weekDiv.classList.add('non-display');
-    console.log(x);
+
     let wButtons = document.querySelector('.w-buttons');
     wButtons.classList.remove('non-display');
     btnShower(Number(x));
@@ -74,7 +74,7 @@ function weekBtnHandler() {
     prbtn.classList.remove('no-show');
     weekBtns.forEach(x => {
         x.addEventListener('click', () => {
-            console.log(x);
+
             days.classList.remove('non-display');
             if (x.id == 'week-1') {
                 daySelectorHandler(w1);
@@ -104,21 +104,19 @@ function weekBtnHandler() {
 function daySelectorHandler(week) {
     const first = document.querySelectorAll('.first');
     first.forEach(x => x.classList.remove('non-display'));
-    week.forEach(x => {
-        console.log(x);
-    })
+
 }
 
 function dayHandler(x) {
-    console.log(x);
+
     let allDiv = document.querySelectorAll('.list');
     allDiv.forEach(y => {
 
         if (y.classList.contains(x) && y.classList.contains(weekTemp)) {
             y.classList.remove('non-display');
-            console.log(y);
+
             elementContainer = y;
-            console.log(elementContainer);
+
         }
         else {
             y.classList.add('non-display');
@@ -138,14 +136,14 @@ function listDisplay(x) {
     })
 
 }
-
+// adding the chosen workout sets and reps to the list
 function addingHandler() {
     const train = document.querySelector('#tr-select').value;
     const sets = document.querySelector('#sets').value;
     let reps = document.querySelector('#reps').value;
     const allList = document.querySelectorAll('.list');
     const bodyPart = document.querySelector('#buttons-wrapper').value;
-    console.log(train, sets, reps);
+
     allList.forEach(x => {
         if (x.classList.contains('non-display') === false) {
             let li = document.createElement('li');
@@ -181,10 +179,8 @@ function addingHandler() {
     })
 
 }
-
+// Printing function and displaying only the workout til printing
 function printWorkout(w) {
-
-    console.log(w);
 
     const week = document.querySelectorAll('.list');
     week.forEach(x => {
@@ -197,18 +193,73 @@ function printWorkout(w) {
         x.classList.add('no-show');
     })
     window.print();
-    noPrint.forEach(x => {
-        x.classList.remove('no-show');
-    });
-    week.forEach(x => {
-        if (x.classList.contains(w) == true) {
-            x.classList.add('non-display');
-        }
-    })
+    setTimeout(() => {
+        noPrint.forEach(x => {
+            x.classList.remove('no-show');
+        });
+        week.forEach(x => {
+            if (x.classList.contains(w) == true) {
+                x.classList.add('non-display');
+            }
+        })
+    }, 1000)
+
 }
+// print function
 function printBtn() {
     const btn = document.querySelectorAll('.pr');
     const prbtn = document.querySelector('#prbtn').classList.add('no-show');
     btn.forEach(x => x.classList.remove('no-show'));
 
+}
+const chestWrapper = [];
+const backWrapper = [];
+const shoulderWrapper = [];
+const legWrapper = [];
+const bicepsWrapper = [];
+const tricepsWrapper = [];
+// fetching the json
+fetch('./workout.json')
+    .then(response => response.json())
+    .then(data => dataHandler(data))
+    .catch(error => console.log(error));
+
+// pushing the data to the corresponding arrays
+
+function dataHandler(data) {
+    data.chest.forEach(data => chestWrapper.push(data.name));
+    data.back.forEach(data => backWrapper.push(data.name));
+    data.shoulder.forEach(data => shoulderWrapper.push(data.name));
+    data.leg.forEach(data => legWrapper.push(data.name));
+    data.biceps.forEach(data => bicepsWrapper.push(data.name));
+    data.triceps.forEach(data => tricepsWrapper.push(data.name));
+}
+// Adding the json data to the select element as option
+
+function bodyPartSelector(selectValue) {
+    const trainingSelector = document.querySelector('#tr-select');
+    removeAllChildNodes(trainingSelector);
+    let wrapper;
+    if (selectValue == 'chest') { wrapper = chestWrapper }
+    else if (selectValue == 'back') { wrapper = backWrapper }
+    else if (selectValue == 'shoulder') { wrapper = shoulderWrapper }
+    else if (selectValue == 'leg') { wrapper = legWrapper }
+    else if (selectValue == 'biceps') { wrapper = bicepsWrapper }
+    else { wrapper = tricepsWrapper }
+    wrapper.forEach(x => {
+
+        let option = document.createElement('option');
+        trainingSelector.appendChild(option);
+        option.value = x;
+        option.innerText = x;
+
+    })
+}
+
+
+// removing all Child nodes
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }

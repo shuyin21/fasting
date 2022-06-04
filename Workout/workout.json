@@ -1,0 +1,35 @@
+{
+    "chest": [
+        {
+            "name": "Bench press"
+        },
+        {
+            "name": "Band Bench Press"
+        }
+    ],
+    "back": [
+        {
+            "name": "Cable pull down"
+        }
+    ],
+    "shoulder": [
+        {
+            "name": "shoulder"
+        }
+    ],
+    "leg": [
+        {
+            "name": "leg"
+        }
+    ],
+    "biceps": [
+        {
+            "name": "biceps"
+        }
+    ],
+    "triceps": [
+        {
+            "name": "triceps"
+        }
+    ]
+}
