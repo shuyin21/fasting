@@ -5,31 +5,226 @@
         },
         {
             "name": "Band Bench Press"
+        },
+        {
+            "name": "Band Cross-over"
+        },
+        {
+            "name": "Barbell Bench Press"
+        },
+        {
+            "name": "Decline Bench Press"
+        },
+        {
+            "name": "Incline Bench Press"
+        },
+        {
+            "name": "Pullover"
+        },
+        {
+            "name": "Chest Fly"
+        },
+        {
+            "name": "Decline Chest Fly"
+        },
+        {
+            "name": "Cable Inner Chest Press"
+        },
+        {
+            "name": "Cable Lower Chest Raise"
+        },
+        {
+            "name": "Mid Chest Crossover"
         }
     ],
     "back": [
         {
-            "name": "Cable pull down"
+            "name": "Hyperextension"
+        },
+        {
+            "name": "Behind back shrug"
+        },
+        {
+            "name": "Barbell Bent-Arm Pullover"
+        },
+        {
+            "name": "Barbell Bent-Over Row"
+        },
+        {
+            "name": "Barbell Deadlift"
+        },
+        {
+            "name": "Barbell Incline Bench Pull"
+        },
+        {
+            "name": "Barbell Romanian Deadlift"
+        },
+        {
+            "name": "Barbell Two-Arm Row"
+        },
+        {
+            "name": "Cable Elevated Row"
+        },
+        {
+            "name": "Cable Lat Pulldown"
+        },
+        {
+            "name": "Cable Seated Row"
+        },
+        {
+            "name": "Cable Straight Crossover"
+        },
+        {
+            "name": "Cable Underhand Pull-down"
+        },
+        {
+            "name": "Chin-Up"
         }
     ],
     "shoulder": [
         {
-            "name": "shoulder"
+            "name": "Barbell Alternating Press"
+        },
+        {
+            "name": "Barbell Bradford Rocky Press"
+        },
+        {
+            "name": "Barbell Front Raise"
+        },
+        {
+            "name": "Barbell Incline Shoulder Raise"
+        },
+        {
+            "name": "Barbell Military Press"
+        },
+        {
+            "name": "Barbell Prone Shoulder Pull"
+        },
+        {
+            "name": "Barbell Rear Delt Row"
+        },
+        {
+            "name": "Barbell Seated Front Raise"
+        },
+        {
+            "name": "Barbell Shoulder Press"
+        },
+        {
+            "name": "Cable External Rotation"
+        },
+        {
+            "name": "Cable Front Raise"
         }
     ],
     "leg": [
         {
-            "name": "leg"
+            "name": "Barbell Deep Squat"
+        },
+        {
+            "name": "Barbell Front Squat"
+        },
+        {
+            "name": "Barbell Lunge"
+        },
+        {
+            "name": "Barbell Snatch Pull"
+        },
+        {
+            "name": "Barbell Step-Ups"
+        },
+        {
+            "name": "Dumbbell Hamstring Curl"
+        },
+        {
+            "name": "Calf Raise"
+        },
+        {
+            "name": "Leg Press"
+        },
+        {
+            "name": "Standing Calf Stretch"
+        },
+        {
+            "name": "Hack Squat"
+        },
+        {
+            "name": "Jump Squat"
+        },
+        {
+            "name": "Leg Extension"
+        },
+        {
+            "name": "Leg Curl"
         }
     ],
     "biceps": [
         {
-            "name": "biceps"
+            "name": "Bicep Drag Curl"
+        },
+        {
+            "name": "Barbell Close Grip Curl"
+        },
+        {
+            "name": "Barbell Curl"
+        },
+        {
+            "name": "Barbell Preacher Curl"
+        },
+        {
+            "name": "Barbell Spider Curl"
+        },
+        {
+            "name": "Cable High Curl"
+        },
+        {
+            "name": "Cable Incline Two-Arm Curl"
+        },
+        {
+            "name": "One-Arm Concentration Curl"
+        },
+        {
+            "name": "Cable Overhead Curl"
+        },
+        {
+            "name": "Hammer Curls"
         }
     ],
     "triceps": [
         {
-            "name": "triceps"
+            "name": " Head Tricep Extension"
+        },
+        {
+            "name": "Barbell Close Grip Bench Press"
+        },
+        {
+            "name": "Close Grip Press Behind the Neck"
+        },
+        {
+            "name": "Reverse Grip Skullcrusher"
+        },
+        {
+            "name": "Cable High Pulley Tricep Extension"
+        },
+        {
+            "name": "Cable One-Arm Tricep Extension"
+        },
+        {
+            "name": "Cable Reverse Grip Tricep Pushdown"
+        },
+        {
+            "name": "Cable Rope Triceps Pushdown"
+        },
+        {
+            "name": "Cable Triceps Pushdown"
+        },
+        {
+            "name": "Dip"
+        },
+        {
+            "name": "Dumbbell Alternating Extension"
+        },
+        {
+            "name": "Dumbbell Incline Extension"
         }
     ]
 }

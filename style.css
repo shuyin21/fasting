@@ -54,6 +54,9 @@ a {
     color: #000;
 }
 
+a:hover {
+    font-weight: bold;
+}
 
 
 /* #darkening {

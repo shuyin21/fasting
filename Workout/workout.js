@@ -71,7 +71,7 @@ function weekBtnHandler() {
     const weekBtns = document.querySelectorAll('.w-buttons button');
     const days = document.getElementById('days');
 
-    prbtn.classList.remove('no-show');
+
     weekBtns.forEach(x => {
         x.addEventListener('click', () => {
 
@@ -104,7 +104,7 @@ function weekBtnHandler() {
 function daySelectorHandler(week) {
     const first = document.querySelectorAll('.first');
     first.forEach(x => x.classList.remove('non-display'));
-
+    prbtn.classList.remove('no-show');
 }
 
 function dayHandler(x) {
@@ -159,6 +159,7 @@ function addingHandler() {
             setsSpan.style.width = '50px';
             repsSpan.style.width = '50px';
             delBtn.style.height = '10px';
+            delBtn.style.background = 'red';
             ul.appendChild(li);
             li.appendChild(bodySpan);
             li.appendChild(trSpan);

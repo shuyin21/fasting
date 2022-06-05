@@ -5,6 +5,8 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    color: #fff;
 
 }
 
@@ -34,7 +36,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #fff;
+}
+
+a:hover {
+    font-weight: bold;
 }
 
 .centering {
@@ -78,11 +84,23 @@ p {
 
 }
 
+input,
+select {
+    background-color: #805959;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+input {
+    margin: 0 1px;
+}
+
 #input {
     grid-area: input;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 #foodInput {
@@ -109,9 +127,11 @@ p {
     margin-left: 5px;
     border-radius: 50%;
     font-size: 20px;
-    background-color: #666;
+    background-color: #805959;
+
     color: #fff;
     cursor: pointer;
+    border: 1px solid #fff;
 }
 
 #list-box {
@@ -155,7 +175,7 @@ p {
 }
 
 #list-box ul li p {
-    color: #000;
+    color: #fff;
     padding: 0;
     margin: 0;
     width: 25%;
@@ -172,6 +192,9 @@ p {
     margin: 0 2px;
     border-radius: 50%;
     cursor: pointer;
+    background-color: rgba(112, 4, 4, 0.942);
+    color: #fff;
+    border: 1px solid #fff;
 }
 
 @media screen and (min-width:768px) {

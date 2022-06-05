@@ -59,6 +59,7 @@
                 <button class="non-display" id="week-3">week 3</button>
                 <button class="non-display" id="week-4">week 4</button>
             </div>
+
             <select name="day" id="days" class="non-display no" onchange="dayHandler(value)">
                 <option value="Day" selected="false" disabled="disabled">Day</option>
                 <option value="mon">Monday</option>
@@ -102,14 +103,19 @@
                 <input id="reps" type="number" placeholder="Reps" class="no first non-display">
                 <button onClick="addingHandler()" class="no non-display first">Add</button>
             </div>
+            <div id="printer-btn" class="printer-btn no">
+                <button onClick="printBtn()" id="prbtn" class="no-show">Print</button>
+                <button onClick="printWorkout('w1')" class="w1-print non-display pr no-show">Print W 1</button>
+                <button onClick="printWorkout('w2')" class="w2-print non-display pr no-show">Print W 2</button>
+                <button onClick="printWorkout('w3')" class="w3-print non-display pr no-show">Print W 3</button>
+                <button onClick="printWorkout('w4')" class="w4-print non-display pr no-show">Print W 4</button>
+
+            </div>
             <div id="w1" class="list-div ">
                 <div class="mon w1 list non-display">
                     <ul class="list-ul">
                         <h3 class="day-h3">Week 1 Monday</h3>
-                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
-                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
-                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
-                        <li><span>Bench press</span><span>5 sets</span><span>12 reps</span></li>
+
 
                     </ul>
                 </div>
@@ -256,14 +262,7 @@
                     </ul>
                 </div>
             </div>
-            <div id="printer-btn" class="printer-btn no">
-                <button onClick="printBtn()" id="prbtn" class="no-show">Print</button>
-                <button onClick="printWorkout('w1')" class="w1-print non-display pr no-show">Print Week 1</button>
-                <button onClick="printWorkout('w2')" class="w2-print non-display pr no-show">Print Week 2</button>
-                <button onClick="printWorkout('w3')" class="w3-print non-display pr no-show">Print Week 3</button>
-                <button onClick="printWorkout('w4')" class="w4-print non-display pr no-show">Print Week 4</button>
 
-            </div>
         </div>
 
 
