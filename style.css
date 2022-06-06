@@ -115,6 +115,7 @@ img {
 #bmi-calc h6 {
     color: #fff;
     text-align: center;
+    margin: 5px 0 0;
 }
 
 .bmi-input {
@@ -151,7 +152,7 @@ img {
     font-family: 'Roboto', sans-serif;
 }
 
-#info-wrapper {}
+
 
 .a-btn {
     /* width: 100%;
