@@ -99,7 +99,7 @@ img {
 }
 
 #bmi-calc {
-    width: 40%;
+    min-width: 35%;
     height: 80%;
     border: 1px solid #fff;
     background-color: #000;
@@ -145,9 +145,9 @@ img {
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    left: 50%;
+    left: 45%;
     color: #fff;
-
+    text-align: center;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }
