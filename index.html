@@ -72,8 +72,18 @@
 
         <div id="header" class="centering">
 
-            <img src="/images/homepage-images/1200.jpg" alt="training image">
-
+            <!-- <img src="/images/homepage-images/1200.jpg" alt="training image"> -->
+            <div id="back-div">
+                <div id="bmi-calc">
+                    <h6>BMI CALCULATOR</h6>
+                    <form action="submit" id="bmi-form">
+                        <input class="bmi-input weight" type="number" placeholder="weight in kg" required>
+                        <input class="bmi-input height" type="number" placeholder="height in cm" required>
+                        <button type="submit">Calculate</button>
+                        <p id="answer-par"></p>
+                    </form>
+                </div>
+            </div>
             <div id="info-wrapper">
                 <h1>Welcome to the LSC App</h1>
                 <h4>Choose what you would like to do</h4>
