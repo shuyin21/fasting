@@ -1,11 +1,3 @@
-// const footerP = document.querySelector('#footer p');
-// function dateFunc() {
-//     let d = new Date();
-//     let year = d.getFullYear();
-//     footerP.innerHTML = `Life Style Change App ${year}`;
-// }
-// dateFunc();
-
 
 const addBtn = document.getElementById('add-btn');
 const listBox = document.querySelector('#list-box ul');
